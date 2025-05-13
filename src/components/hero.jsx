@@ -5,12 +5,21 @@ import "aos/dist/aos.css";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
+import markerIcon2x from "leaflet/dist/images/marker-icon-2x.png";
+import markerIcon from "leaflet/dist/images/marker-icon.png";
+import markerShadow from "leaflet/dist/images/marker-shadow.png";
 import { ArrowUp } from "lucide-react";
 const Hero = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [lightboxImage, setLightboxImage] = useState(null);
   const [isVisible, setIsVisible] = useState(false);
 
+  delete L.Icon.Default.prototype._getIconUrl;
+  L.Icon.Default.mergeOptions({
+    iconRetinaUrl: markerIcon2x,
+    iconUrl: markerIcon,
+    shadowUrl: markerShadow,
+  });
   useEffect(() => {
     const toggleVisibility = () => {
       setIsVisible(window.pageYOffset > 300);
@@ -254,7 +263,7 @@ const Hero = () => {
             {/* Kartica 1 - 2 slike */}
             <div className="bg-white p-6 rounded-2xl shadow-md border border-gray-200 cursor-pointer transform transition-transform duration-300 hover:-translate-y-1.5">
               <h3 className="text-xl font-semibold text-gray-800 mb-4 text-center">
-                Izrada velike kašike
+                Izrada kašika za bagere sajlaše
               </h3>
               <div className="flex flex-col gap-4">
                 <img
@@ -312,7 +321,7 @@ const Hero = () => {
             {/* Kartica 3 - 1 slika */}
             <div className="bg-white p-6 rounded-2xl shadow-md border border-gray-200 cursor-pointer transform transition-transform duration-300 hover:-translate-y-1.5">
               <h3 className="text-xl font-semibold text-gray-800 mb-4 text-center">
-                Zubi za kašike
+                Izrada ježeva za valjke
               </h3>
               <img
                 src="https://res.cloudinary.com/dqwearmlt/image/upload/v1747083119/jez_t2d35m.jpg"
@@ -428,7 +437,7 @@ const Hero = () => {
           {/* Google Map Embed */}
           <div className="relative w-full h-96 rounded-lg overflow-hidden shadow-lg mb-10">
             <MapContainer
-              center={[43.5875261, 21.2767097]} // Koordinate za Kruševac, možeš promeniti prema potrebama
+              center={[43.5875261, 21.2767097]}
               zoom={13}
               scrollWheelZoom={false}
               style={{ width: "100%", height: "100%" }}
