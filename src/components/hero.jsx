@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { Helmet } from "react-helmet";
-import logo from "../assets/logoT.png";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
@@ -68,7 +67,11 @@ const Hero = () => {
         <div className="absolute top-0 left-0 w-full z-20">
           <div className="w-full px-6 xl:px-50 py-4 bg-black/80 flex items-center justify-between relative">
             {/* Logo */}
-            <img src={logo} alt="Logo" className="w-32 xl:w-40" />
+            <img
+              src="https://res.cloudinary.com/dqwearmlt/image/upload/v1747135933/logoTransp_plnhbv.png"
+              alt="Logo"
+              className="w-32 xl:w-40"
+            />
 
             {/* Desktop meni */}
             <div className="hidden xl:flex space-x-6 text-white font-medium">
@@ -425,14 +428,14 @@ const Hero = () => {
           {/* Google Map Embed */}
           <div className="relative w-full h-96 rounded-lg overflow-hidden shadow-lg mb-10">
             <MapContainer
-              center={[43.5829, 21.8848]} // Koordinate za Kruševac, možeš promeniti prema potrebama
+              center={[43.5875261, 21.2767097]} // Koordinate za Kruševac, možeš promeniti prema potrebama
               zoom={13}
               scrollWheelZoom={false}
               style={{ width: "100%", height: "100%" }}
             >
               <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
-              <Marker position={[43.5829, 21.8848]}>
-                <Popup>Naša firma je ovde!</Popup>
+              <Marker position={[43.5875261, 21.2767097]}>
+                <Popup>Cara Lazara 472</Popup>
               </Marker>
             </MapContainer>
           </div>
