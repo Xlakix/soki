@@ -188,7 +188,7 @@ const Hero = () => {
                 partnerom za vaše projekte.
               </p>
               <p className="text-lg text-gray-600 mb-6">
-                Uz pomoć naših iskusnih radnika, garantiramo brzu i kvalitetnu
+                Uz pomoć naših iskusnih radnika, garantujemo brzu i kvalitetnu
                 uslugu.
               </p>
             </div>
